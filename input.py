@@ -36,4 +36,9 @@ for index in range(plrs):
 
 print(plrStats)
 
+# Select random topic
 topicLen = len(topics)
+randTopic = topics[randint(0, topicLen - 1)]
+
+for plrIndex in range(len(plrStats)):
+    

@@ -8,7 +8,7 @@ https://ai.google.dev/gemini-api/docs/get-started/python
 """
 
 import os
-
+# from main import sentenceFinal
 import google.generativeai as genai
 
 #genai.configure(api_key=os.environ["AIzaSyB7l56XvqCTs9EUMrA3D3IcA_3SAML1oAM"])
@@ -143,7 +143,9 @@ chat_session = model.start_chat(
     },  
   ]
 )
+print("e")
+def sendMessage(sentenceFinal):
+    response = chat_session.send_message(sentenceFinal)
+    print(response.text)
 
-response = chat_session.send_message("testing")
-
-print(response.text)
+print("ee")

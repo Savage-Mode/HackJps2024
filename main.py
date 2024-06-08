@@ -1,5 +1,6 @@
 from topics import topics
 from random import randint
+from AI import sendMessage
 
 #How does the game work: 
 print("""
@@ -54,3 +55,5 @@ for plrName in plrStats:
         print("This sentence has too many question marks! You get a 0!")
         plrStats[plrName].append(0)
     print(plrStats)
+    sentenceFinal = "[topic: %s] %s" % (randTopic, sen)
+    sendMessage(sentenceFinal)

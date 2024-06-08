@@ -143,6 +143,6 @@ chat_session = model.start_chat(
   ]
 )
 
-response = chat_session.send_message("INSERT_INPUT_HERE")
+response = chat_session.send_message("testing")
 
 print(response.text)

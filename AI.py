@@ -139,7 +139,7 @@ chat_session = model.start_chat(
       "parts": [
         "```python\n{\n  \"Score\": 10/100,\n  \"Explanation\": \"This sentence demonstrates a lack of effort and understanding of basic grammar and spelling. While it loosely relates to the topic of taking tests in school, the excessive use of letters and made-up words ('tesssts', 'itssssssss', 'fuinnnnnnZY') render it nonsensical.  To improve, focus on: 1) Using correct spelling. 2) Expressing a clear idea. 3)  Using proper grammar and punctuation.  Remember, tests are a part of school, and it's okay to find them challenging, but expressing your thoughts clearly is important.\"\n}\n``` \n",
       ],
-    },
+    },  
   ]
 )
 

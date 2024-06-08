@@ -40,5 +40,10 @@ print(plrStats)
 topicLen = len(topics)
 randTopic = topics[randint(0, topicLen - 1)]
 
-for plrIndex in range(len(plrStats)):
-    
+for plrName in plrStats:
+    print("It is " + plrName + "'s turn\n")
+    sen = input("Write a sentence on the topic of " + randTopic + ": ")
+    if sen.count(".") > 1:
+        print("This sentence has too many periods! You get a 0!")
+        plrStats[plrName].append(0)
+    print(plrStats)

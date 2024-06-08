@@ -1,2 +1,1 @@
-print("yo its ashwin skibidi")
-print("skibidi bopbopbop yesyes")
+topics = ["apple", "banana", "mars", "life", "moon"]

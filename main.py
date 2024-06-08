@@ -56,4 +56,34 @@ for plrName in plrStats:
     elif (sen.count("?")) > 1:
         print("This sentence has too many question marks! You get a 0!")
         plrStats[plrName].append(0)
+        continue
+    
     print(plrStats)
+    sentenceFinal = "[topic: %s] %s" % (randTopic, sen)
+    try:
+        responseText = sendMessage(sentenceFinal)
+    except:
+        print("oof, the AI's free resources ran out")
+        break
+    
+    try:
+        score = int(responseText.split("\"Score\":")[1].split(",", 1)[0].strip().split("/")[0])
+    except:
+        print("You get a 0! You almost broke the AI!")
+    try:
+        explanation = responseText.split("\"Explanation\": \"")[1].split("\"\n}\n``` \n")[0]
+    except:
+        print("You get a 0! You almost broke the AI!")    
+
+    print("Reasoning: " + explanation)
+    print("Grade: " + str(score) + "%")
+
+    plrStats[plrName].append(score)
+
+print("The Game has ended!")
+print("Here are the standings")
+
+# standings = {}
+
+# for plr in plrStats:
+#     plr[]

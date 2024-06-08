@@ -146,6 +146,7 @@ chat_session = model.start_chat(
 print("e")
 def sendMessage(sentenceFinal):
     response = chat_session.send_message(sentenceFinal)
-    print(response.text)
+    return response.text
+    # print(response.text)
 
 print("ee")

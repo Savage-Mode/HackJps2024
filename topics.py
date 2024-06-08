@@ -1,1 +1,1 @@
-topics = ["apple", "banana", "mars", "life", "moon"]
+topics = ["apple", "banana", "mars", "life", "moon","buckshot roulette", "ai crap"]

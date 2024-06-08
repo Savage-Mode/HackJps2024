@@ -47,5 +47,5 @@ topics = [
     "Spirituality", "Stoicism", "Sublime", "Symbiosis", "Synergy", "Taoism", "Technology", "Telepathy", "Theology", "Tolerance",
     "Tragedy", "Transcendence", "Transformation", "Transparency", "Transcendentalism", "Truth", "Umbrella", "Unity", "Utopia", "Validation",
     "Valor", "Virtue", "Visionary", "Vitality", "Voyage", "Wholeness", "Wisdom", "Wonder", "Xenophobia", "YinYang",
-    "Zen", "Zeal", "Zest"
+    "Zen", "Zeal", "Zest", "Coding" 
 ]

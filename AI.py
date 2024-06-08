@@ -8,7 +8,7 @@ https://ai.google.dev/gemini-api/docs/get-started/python
 """
 
 import os
-
+# from main import sentenceFinal
 import google.generativeai as genai
 
 genai.configure(api_key=os.environ["AIzaSyB7l56XvqCTs9EUMrA3D3IcA_3SAML1oAM"])
@@ -140,9 +140,19 @@ chat_session = model.start_chat(
         "```python\n{\n  \"Score\": 10/100,\n  \"Explanation\": \"This sentence demonstrates a lack of effort and understanding of basic grammar and spelling. While it loosely relates to the topic of taking tests in school, the excessive use of letters and made-up words ('tesssts', 'itssssssss', 'fuinnnnnnZY') render it nonsensical.  To improve, focus on: 1) Using correct spelling. 2) Expressing a clear idea. 3)  Using proper grammar and punctuation.  Remember, tests are a part of school, and it's okay to find them challenging, but expressing your thoughts clearly is important.\"\n}\n``` \n",
       ],
     },  
+    {
+      "role": "user",
+      "parts": [
+        "Stop putting enter in your output as it breaks the dictonary that you make sometimes. That just means dont space it out like this:\n see how it spaced out with that?",
+      ],
+    },
+    
   ]
 )
+print("e")
+def sendMessage(sentenceFinal):
+    response = chat_session.send_message(sentenceFinal)
+    return response.text
+    # print(response.text)
 
-response = chat_session.send_message("testing")
-
-print(response.text)
+print("ee")

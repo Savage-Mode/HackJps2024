@@ -11,7 +11,7 @@ import os
 # from main import sentenceFinal
 import google.generativeai as genai
 
-genai.configure(api_key=os.environ["AIzaSyD0rSc0MU47vGrWLajv6MQZH_D-mq_NkNM"])
+genai.configure(api_key=os.environ["AIzaSyBNlQPky1626Ed29Khtp2aSfX-YvYs8d7g"])
 
 # Create the model
 # See https://ai.google.dev/api/python/google/generativeai/GenerativeModel

@@ -1,7 +1,6 @@
 from topics import topics
 from random import randint
 from AI import sendMessage
-from statistics import fmean
 
 print("""
 

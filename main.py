@@ -1,1 +1,1 @@
-print("ermmm what the sigma???")
+print("u found a mon")

@@ -1,5 +1,1 @@
-print("""
-e
-      """)
-
-sen = input("")
+print("e")

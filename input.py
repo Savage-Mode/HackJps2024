@@ -47,7 +47,6 @@ for plrName in plrStats:
     if sen.count(".") > 1:
         print("This sentence has too many periods! You get a 0!")
         plrStats[plrName].append(0)
-<<<<<<< HEAD
     elif (sen.count("!")) > 1:
         print("This sentence has too many exclamation marks! You get a 0!")
         plrStats[plrName].append(0)
@@ -55,6 +54,3 @@ for plrName in plrStats:
         print("This sentence has too many question marks! You get a 0!")
         plrStats[plrName].append(0)
     print(plrStats)
-=======
-    print(plrStats)
->>>>>>> e77df772467454a1c34312354a0720e0d56a3243

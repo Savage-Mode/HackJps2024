@@ -60,8 +60,10 @@ for plrName in plrStats:
     
     print(plrStats)
     sentenceFinal = "[topic: %s] %s" % (randTopic, sen)
+    
     try:
         responseText = sendMessage(sentenceFinal)
+        print(responseText)
     except:
         print("oof, the AI's free resources ran out")
         break

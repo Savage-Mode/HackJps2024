@@ -69,10 +69,12 @@ for plrName in plrStats:
         break
     try:
         responseDict = json.loads(responseText)
+        print(responseDict)
         score = responseDict["Score"]
         explanation = responseDict["Explanation"]
     except: 
         print("Ai is too lazy to repsond, try another time!")
+        plrStats[plrName].append(0)
         continue
     
     print("Reasoning: " + explanation)
@@ -81,13 +83,28 @@ for plrName in plrStats:
 
     plrStats[plrName].append(score)
 
-print("The Game has ended!")
-print("Here are the standings")
-
 standingsValues = [plrStats[plrName][0] for plrName in plrStats]
 print(standingsValues)
 standingsValues = sorted(standingsValues, reverse=True)
 standingsNames = ['' for plr in plrStats]
+for index in range(len(standingsValues)):
+    val = standingsValues[index]
+    for plrName in plrStats:
+        print(plrName)
+        if plrStats[plrName][0] == val and not plrName in standingsNames:
+            standingsNames[index] = plrName
+            break
+print(standingsNames)
+print(standingsValues)
+print("The Game has ended!")
+print("Here are the standings")
+
+for index in range(len(standingsValues)):
+    val = standingsValues[index]
+    name = standingsNames[index]
+    sentenceFinal = "[topic: %s] %s" % (randTopic, sen)
+    print()
+    print("[%s] %s with a %s percent" % (index + 1, name, val))
 
 # for plrName in plrStats:
 #     plrGrade = plrStats[plrName][0]

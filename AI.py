@@ -159,6 +159,12 @@ chat_session = model.start_chat(
         "Stop putting the ```json at the start and the ``` at the end. It only has to be a dictionary like this: Score: Bla Bla, Explanation: Bla Bla Bla",
       ],
     },
+    {
+      "role": "user",
+      "parts": [
+        "Always keep it in dictionary format and dont put any spaces after the { and before the }",
+      ],
+    },
   ]
 )
 

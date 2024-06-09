@@ -20,23 +20,22 @@ def play():
         for i in range(num_players):
             players.append({"name": f"Player {i+1}", "score": 0})
         topic = random.choice(topics)
-        return render_template("play.html", topic=topic, players=players)
+        return render_template("play.html", topic=topic, players=players, current_player=0)
     else:
         return "Error: Invalid request method"
 
 @app.route("/submit", methods=["POST"])
 def submit():
-    if "topic" in request.form and "sentence" in request.form and "players" in request.form:
+    if "topic" in request.form and "sentence" in request.form and "players" in request.form and "current_player" in request.form:
         topic = request.form["topic"]
         sentence = request.form["sentence"]
         players = json.loads(request.form["players"])
-        scores = []
-        for player in players:
-            score = sendMessage(sentence, topic)
-            player["score"] += score
-            scores.append((player["name"], score))
-        updateLeaderboard(scores)
-        return jsonify({"scores": scores})
+        current_player = int(request.form["current_player"])
+        response = sendMessage(sentence)
+        score = int(response["Score"].split("/")[0])
+        players[current_player]["score"] += score
+        current_player = (current_player + 1) % len(players)
+        return jsonify({"response": response["Explanation"], "scores": players, "current_player": current_player})
     else:
         return jsonify({"error": "Topic, sentence, and players are required"}), 400
 

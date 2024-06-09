@@ -12,6 +12,7 @@
         <br><br>
         <input type="hidden" name="topic" value="{{ topic }}">
         <input type="hidden" name="players" value="{{ players|tojson }}">
+        <input type="hidden" name="current_player" value="{{ current_player }}">
         <input type="submit" value="Submit">
     </form>
     <h2>Players:</h2>
@@ -20,5 +21,35 @@
             <li>{{ player.name }}: {{ player.score }}</li>
         {% endfor %}
     </ul>
+    <div id="response"></div>
+
+    <script>
+        const form = document.querySelector("form");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const sentence = document.querySelector("#sentence").value;
+            const topic = document.querySelector("[name='topic']").value;
+            const players = document.querySelector("[name='players']").value;
+            const current_player = document.querySelector("[name='current_player']").value;
+            const response = await fetch("/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ sentence, topic, players, current_player }),
+            });
+            const data = await response.json();
+            document.querySelector("#response").innerHTML = `AI Response: ${data.response}`;
+            // Update scores
+            const playersList = document.querySelector("ul");
+            playersList.innerHTML = "";
+            data.scores.forEach((player) => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${player.name}: ${player.score}`;
+                playersList.appendChild(listItem);
+            });
+            // Update current player
+            const currentPlayerElement = document.querySelector("[name='current_player']");
+            currentPlayerElement.value = data.current_player;
+        });
+    </script>
 </body>
 </html>

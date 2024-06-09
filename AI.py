@@ -146,16 +146,19 @@ chat_session = model.start_chat(
     {
       "role": "user",
       "parts": [
-        "Stop putting enter in your output as it breaks the dictonary that you make sometimes. That just means dont space it out like this:\n see how it spaced out with that? It breaks the dictonary when you put it outside of it as i am using python using your api. I am taking your output as text so it cant work if you put a space in it.",
+        "Stop putting enter in your output as it breaks the dictonary that you make sometimes. That just means dont space it out like this:\n see how it spaced out with that?",
       ],
     },
-    
+    {
+      "role": "user",
+      "parts": [
+        "Stop putting the \n into your output. Make the output a dictionary that will be will be able to convert into one with json.loads.",
+      ],
+    },
   ]
 )
-print("e")
+
 def sendMessage(sentenceFinal):
     response = chat_session.send_message(sentenceFinal)
     return response.text
     # print(response.text)
-
-print("ee")

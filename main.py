@@ -79,13 +79,12 @@ for plrName in plrStats:
     plrStats[plrName].append(score)
 
 standingsValues = [plrStats[plrName][0] for plrName in plrStats]
-print(standingsValues)
+
 standingsValues = sorted(standingsValues, reverse=True)
 standingsNames = ['' for plr in plrStats]
 for index in range(len(standingsValues)):
     val = standingsValues[index]
     for plrName in plrStats:
-        print(plrName)
         if plrStats[plrName][0] == val and not plrName in standingsNames:
             standingsNames[index] = plrName
             break

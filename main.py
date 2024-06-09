@@ -36,8 +36,6 @@ for index in range(plrs):
 
     plrStats[plrKey] = []
 
-print(plrStats)
-
 # Select random topic
 topicLen = len(topics)
 randTopic = topics[randint(0, topicLen - 1)]
@@ -58,7 +56,6 @@ for plrName in plrStats:
         plrStats[plrName].append(0)
         continue
     
-    print(plrStats)
     sentenceFinal = "[topic: %s] %s" % (randTopic, sen)
     
     try:

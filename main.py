@@ -85,7 +85,4 @@ for plrName in plrStats:
 print("The Game has ended!")
 print("Here are the standings")
 
-# standings = {}
-
-# for plr in plrStats:
-#     plr[]
+standings = {}

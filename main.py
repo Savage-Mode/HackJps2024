@@ -1,7 +1,11 @@
 from topics import topics
 from random import randint
 from AI import sendMessage
+<<<<<<< HEAD
 import json
+=======
+from statistics import fmean
+>>>>>>> 523520994c340d3c8466a2d68abf8a521e1b4163
 
 print("""
 
@@ -68,6 +72,7 @@ for plrName in plrStats:
         print("oof, the AI's free resources ran out")
         break
     try:
+<<<<<<< HEAD
         responseDict = json.loads(responseText)
         score = responseDict["Score"]
         explanation = responseDict["Explanation"]
@@ -75,15 +80,25 @@ for plrName in plrStats:
         print("Ai is too lazy to repsond, try another time!")
         continue
     
+=======
+        score = int(responseText.split("\"Score\":")[1].split(",", 1)[0].strip().split("/")[0])
+    except:
+        print("You get a 0! You almost broke the AI!")
+    try:
+        explanation = responseText.split("\"Explanation\": \"")[1].split("\"\n}\n``` \n")[0]
+    except:
+        print("You get a 0! You almost broke the AI!")    
+
+>>>>>>> 523520994c340d3c8466a2d68abf8a521e1b4163
     print("Reasoning: " + explanation)
     print("Grade: " + str(score) + "%")
-    print("")
 
     plrStats[plrName].append(score)
 
 print("The Game has ended!")
 print("Here are the standings")
 
+<<<<<<< HEAD
 standingsValues = [plrStats[plrName][0] for plrName in plrStats]
 print(standingsValues)
 standingsValues = sorted(standingsValues, reverse=True)
@@ -97,3 +112,6 @@ for plrName in plrStats:
 
 # for plr in plrStats:
 #     plr[]
+=======
+standings = {}
+>>>>>>> 523520994c340d3c8466a2d68abf8a521e1b4163

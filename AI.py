@@ -11,10 +11,8 @@ import os
 # from main import sentenceFinal
 import google.generativeai as genai
 
-
 gemini_api_key = "AIzaSyCiJfsrCsbstRhsZDZANLXt6NuvfZxfkoU"
 genai.configure(api_key=gemini_api_key)
-
 
 # Create the model
 # See https://ai.google.dev/api/python/google/generativeai/GenerativeModel

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static') 
 
 htmlcode = "<p>hello people, its a me, ashwin</p>"
 

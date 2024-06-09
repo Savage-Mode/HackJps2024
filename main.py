@@ -75,7 +75,7 @@ for plrName in plrStats:
         explanation = responseText.split("\"Explanation\": \"")[1].split("\"\n}\n``` \n")[0]
     except:
         print("You get a 0! You almost broke the AI!")    
-
+    print('e')
     print("Reasoning: " + explanation)
     print("Grade: " + str(score) + "%")
 

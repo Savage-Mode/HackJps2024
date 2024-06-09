@@ -47,8 +47,7 @@
                 playersList.appendChild(listItem);
             });
             // Update current player
-            const currentPlayerElement = document.querySelector("[name='current_player']");
-            currentPlayerElement.value = data.current_player;
+            document.querySelector("[name='current_player']").value = data.current_player;
         });
     </script>
 </body>

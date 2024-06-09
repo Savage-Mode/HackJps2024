@@ -155,6 +155,12 @@ chat_session = model.start_chat(
         "Stop putting the \n into your output. Make the output a dictionary that will be will be able to convert into one with json.loads.",
       ],
     },
+    {
+      "role": "user",
+      "parts": [
+        "Stop putting the ```json at the start and the ``` at the end. It only has to be a dictionary like this: Score: Bla Bla, Explanation: Bla Bla Bla",
+      ],
+    },
   ]
 )
 

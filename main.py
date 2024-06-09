@@ -1,6 +1,7 @@
 from topics import topics
 from random import randint
 from AI import sendMessage
+import json
 
 print("""
 
@@ -66,15 +67,13 @@ for plrName in plrStats:
     except:
         print("oof, the AI's free resources ran out")
         break
-    
     try:
-        score = int(responseText.split("\"Score\":")[1].split(",", 1)[0].strip().split("/")[0])
-    except:
-        print("You get a 0! You almost broke the AI!")
-    try:
-        explanation = responseText.split("\"Explanation\": \"")[1].split("\"\n}\n``` \n")[0]
-    except:
-        print("You get a 0! You almost broke the AI!")    
+        responseDict = json.loads(responseText)
+        score = responseDict["Score"]
+        explanation = responseDict["Explanation"]
+    except: 
+        print("Ai is too lazy to repsond, try another time!")
+        continue
     
     print("Reasoning: " + explanation)
     print("Grade: " + str(score) + "%")
@@ -84,6 +83,15 @@ for plrName in plrStats:
 
 print("The Game has ended!")
 print("Here are the standings")
+
+standingsValues = [plrStats[plrName][0] for plrName in plrStats]
+print(standingsValues)
+standingsValues = sorted(standingsValues, reverse=True)
+standingsNames = ['' for plr in plrStats]
+
+for plrName in plrStats:
+    plrGrade = plrStats[plrName][0]
+    
 
 # standings = {}
 

@@ -165,6 +165,12 @@ chat_session = model.start_chat(
         "Always keep it in dictionary format and dont put any spaces after the { and before the }",
       ],
     },
+    {
+      "role": "user",
+      "parts": [
+        "Check if the next response you recieve is very similar to your explanation. If it is give them a 0 for copying off of you.",
+      ],
+    },
   ]
 )
 
